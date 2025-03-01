@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Links Portal - Vsquare Group</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="branding">
+                <img src="vsquare logo.png" alt="Vsquare Logo" class="logo" loading="lazy">
+                <h1 class="company-name">Vsquare Group Of Companies</h1>
+            </div>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">Sales Update Portal</h2>
+                <p class="hero-subtitle">Select your brand to update daily sales</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="grid-layout">
+                <article class="card svl">
+                    <div class="card-content">
+                        <i class="card-icon fas fa-wine-bottle"></i>
+                        <h3 class="card-title">SVL</h3>
+                        <p class="card-description">Update SVL product sales and inventory</p>
+                        <button class="card-button" onclick="openForm('https://forms.google.com/svl-form')">
+                            Open Form
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card bacardi">
+                    <div class="card-content">
+                        <i class="card-icon fas fa-cocktail"></i>
+                        <h3 class="card-title">BACARDI</h3>
+                        <p class="card-description">Submit BACARDI daily sales reports</p>
+                        <button class="card-button" onclick="openForm('https://forms.google.com/bacardi-form')">
+                            Open Form
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card st-ramy">
+                    <div class="card-content">
+                        <i class="card-icon fas fa-cocktail"></i>
+                        <h3 class="card-title">ST RAMY</h3>
+                        <p class="card-description">ST RAMY stock and sales data</p>
+                        <button class="card-button" onclick="openForm('https://forms.google.com/st-ramy-form')">
+                            Open Form
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">&copy; 2025 Vsquare Group. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openForm(url) {
+            // Navigate to the form URL in the same tab
+            window.location.href = url;
+        }
+    
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        const htmlElement = document.documentElement;
+    
+        themeToggle.addEventListener('click', () => {
+            htmlElement.dataset.theme = htmlElement.dataset.theme === 'dark' ? 'light' : 'dark';
+            // Save theme preference
+            localStorage.setItem('theme', htmlElement.dataset.theme);
+        });
+    
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.dataset.theme = savedTheme;
+    </script>
+</body>
+</html>
